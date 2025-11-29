@@ -71,27 +71,10 @@ tuto_inventory /
 curl -LsSf https://astral.sh/uv/install.sh | sh
 # restart your shell if needed so `uv` is on PATH
 
-# Create project
-mkdir -p ~/tuto_inventory/inventory && cd ~/tuto_inventory
-printf "" > inventory/__init__.py
-
-# (Copy your two modules into inventory/)
-# inventory/inventory_analysis.py
-# inventory/inventory_models.py
-
 # Create a virtual environment and activate it
 uv init
 uv venv
 source .venv/bin/activate
-
-# Requirements
-cat > requirements.txt << 'EOF'
-streamlit>=1.37
-pandas>=2.0
-numpy>=1.24
-matplotlib>=3.7
-pydantic>=2.0
-EOF
 
 # Install
 uv pip install -r requirements.txt
@@ -102,19 +85,8 @@ uv pip install -r requirements.txt
 ### Option B — Windows (PowerShell or CMD) using pip\*\*
 
 ```bash
-mkdir tuto_inventory
-cd tuto_inventory
 py -m venv .venv
 .\.venv\Scripts\activate
-mkdir inventory
-type NUL > inventory\__init__.py
-
-# Write the file requirements.txt
-"streamlit>=1.37
-pandas>=2.0
-numpy>=1.24
-matplotlib>=3.7
-pydantic>=2.0"
 
 pip install -r requirements.txt
 ```
